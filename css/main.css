@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+header {
+  width: 100%;
+  background-color: #000;
+}
+
+.navbar-display {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.navbar-display h1 {
+  color: #fff;
+}
+.navbar-display .navbar-menu {
+  display: flex;
+  padding-left: 3.7rem;
+  overflow-x: visible !important;
+}
+.navbar-display .navbar-menu li .fa-xmark {
+  font-size: 20px;
+  color: #fff !important;
+}
+.navbar-display .navbar-menu .fa-xmark {
+  display: none !important;
+}
+.navbar-display .navbar-menu li {
+  margin-right: 25px;
+}
+.navbar-display .navbar-menu li:last-child {
+  margin-right: 0 !important;
+}
+.navbar-display .navbar-menu li a {
+  font-size: 18px;
+  color: #fff;
+}
+
+.form .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.form .form-group input {
+  width: 100%;
+  position: relative;
+}
+.form .form-group .fa-magnifying-glass,
+.form .form-group .fa-xmark {
+  padding: 5px;
+  position: absolute;
+  font-size: 20px;
+}
+.form .form-group .fa-magnifying-glass {
+  color: rgb(0, 0, 0);
+}
+.form .form-group .fa-xmark {
+  color: #000;
+  display: none;
+}
+
+.reso {
+  width: 59.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fa-bars {
+  display: none !important;
+}
+
+@media (max-width: 576px) {
+  .navbar-display .navbar-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+  }
+  .navbar-display .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .navbar-display .navbar-menu .fa-xmark {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    display: block !important;
+    font-size: 20px;
+  }
+
+  .form .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .form .form-group input {
+    position: relative;
+    width: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .form .form-group .fa-magnifying-glass,
+.form .form-group .fa-xmark {
+    padding: 5px;
+    position: absolute;
+    color: rgb(255, 255, 255);
+  }
+  .form .form-group .fa-magnifying-glass {
+    color: rgb(255, 255, 255);
+  }
+  .form .form-group .fa-xmark {
+    color: #000;
+    display: block;
+  }
+
+  .reso {
+    flex-direction: row-reverse;
+  }
+
+  .fa-bars {
+    display: block !important;
+  }
+}

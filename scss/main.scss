@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0 !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+header {
+    width: 100%;
+    background-color: #000;
+}
+
+.navbar-display {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    h1 {
+        color: #fff;
+    }
+    .navbar-menu {
+        display: flex;
+        padding-left: 3.7rem;
+        overflow-x: visible !important;
+        li {
+            .fa-xmark {
+                font-size: 20px;
+                color: #fff !important;
+            }
+        }
+        .fa-xmark {
+            display: none !important;
+        }
+        li {
+            margin-right: 25px;
+            &:last-child {
+                margin-right: 0 !important;
+            }
+            a {
+                font-size: 18px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.form {
+    .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        input {
+            width: 100%;
+            position: relative;
+        }
+        .fa-magnifying-glass,
+        .fa-xmark {
+            padding: 5px;
+            position: absolute;
+            font-size: 20px;
+        }
+        .fa-magnifying-glass {
+            color: rgb(0, 0, 0);
+        }
+        .fa-xmark {
+            color: #000;
+            display: none;
+        }
+    }
+}
+
+.reso {
+    width: 59.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fa-bars {
+    display: none !important;
+}
+
+@media (max-width: 576px) {
+    .navbar-display {
+        .navbar-menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100vh;
+            background-color: #000;
+            overflow-x: hidden;
+            transition: all .3s ease-in-out;
+            z-index: 10;
+        }
+        .navbar-menu {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            .fa-xmark {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                color: #fff;
+                display: block !important;
+                font-size: 20px;
+            }
+        }
+    }
+    .form {
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            input {
+                position: relative;
+                width: 0;
+                visibility: hidden;
+                transition: all .3s ease-in-out;
+            }
+            .fa-magnifying-glass,
+            .fa-xmark {
+                padding: 5px;
+                position: absolute;
+                color: rgb(255, 255, 255);
+            }
+            .fa-magnifying-glass {
+                color: rgb(255, 255, 255);
+            }
+            .fa-xmark {
+                color: #000;
+                display: block;
+            }
+        }
+    }
+    .reso {
+        flex-direction: row-reverse;
+    }
+    .fa-bars {
+        display: block !important;
+    }
+}
