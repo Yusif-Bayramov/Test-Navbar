@@ -115,10 +115,16 @@ header {
         .navbar-menu {
             display: flex;
             flex-direction: column;
-            position: relative;
+            margin-top: 10rem;
+            li {
+                margin-bottom: 20px;
+                a {
+                    font-size: 20px;
+                }
+            }
             .fa-xmark {
                 position: absolute;
-                top: 15px;
+                top: 20px;
                 right: 15px;
                 color: #fff;
                 display: block !important;
@@ -154,6 +160,9 @@ header {
     }
     .reso {
         flex-direction: row-reverse;
+        h1 {
+            margin-right: 10px;
+        }
     }
     .fa-bars {
         display: block !important;
