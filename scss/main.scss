@@ -30,7 +30,7 @@ header {
     flex-direction: row;
     h1 {
         color: #fff;
-        line-height: 1;
+        line-height: 1.2;
     }
     .navbar-menu {
         display: flex;
@@ -106,6 +106,9 @@ header {
             overflow-x: hidden;
             transition: all .3s ease-in-out;
             z-index: 10;
+            h1 {
+                margin-bottom: 0 !important;
+            }
         }
         .navbar-menu {
             display: flex;
