@@ -67,6 +67,7 @@ header {
 }
 .form .form-group input {
   width: 100%;
+  margin-left: 10px;
   position: relative;
 }
 .form .form-group .fa-magnifying-glass,
