@@ -112,7 +112,7 @@ header {
   z-index: -1;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 770px) {
   .navbar-display .navbar-menu-container {
     position: fixed;
     top: 0;

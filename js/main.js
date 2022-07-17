@@ -4,6 +4,8 @@ function myFunction(x) {
         let searchIcon = document.querySelector(".form-group .fa-magnifying-glass");
         input.style.width = "0"
         input.style.visibility = "hidden";
+        let navMenu = document.querySelector(".navbar-menu-container");
+        navMenu.style.width = "0"
         searchIcon.addEventListener("click", () => {
             if (input.style.width == "100%") {
                 input.style.width = "0"
@@ -15,8 +17,7 @@ function myFunction(x) {
                 searchIcon.className = "fa-solid fa-xmark";
             }
         });
-        let navMenu = document.querySelector(".navbar-menu-container");
-        navMenu.style.width = "0"
+
 
     } else {
         let navMenu = document.querySelector(".navbar-menu-container");
@@ -29,7 +30,7 @@ function myFunction(x) {
 
     }
 };
-const mmObj = window.matchMedia("(max-width: 576px)")
+const mmObj = window.matchMedia("(max-width: 770px)")
 myFunction(mmObj);
 mmObj.addListener(myFunction);
 
