@@ -1,51 +1,26 @@
-function myFunction(x) {
-    if (x.matches) {
-        let input = document.querySelector(".form-group input");
-        let searchIcon = document.querySelector(".form-group .fa-magnifying-glass");
-        input.style.width = "0"
-        input.style.visibility = "hidden";
-        let navMenu = document.querySelector(".navbar-menu-container");
-        navMenu.style.width = "0"
-        searchIcon.addEventListener("click", () => {
-            if (input.style.width == "100%") {
-                input.style.width = "0"
-                input.style.visibility = "hidden";
-                searchIcon.className = "fa-solid fa-magnifying-glass";
-            } else {
-                input.style.width = "100%"
-                input.style.visibility = "visible";
-                searchIcon.className = "fa-solid fa-xmark";
-            }
-        });
+const menuBtn = document.querySelector(".menu-icon span");
+const searchBtn = document.querySelector(".search-icon");
+const cancelBtn = document.querySelector(".cancel-icon");
+const items = document.querySelector(".nav-items");
+const form = document.querySelector("form");
 
+menuBtn.onclick = () => {
+    items.classList.add("active");
+    menuBtn.classList.add("hide");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}
 
-    } else {
-        let navMenu = document.querySelector(".navbar-menu-container");
-        navMenu.style.width = "auto"
-
-        let input = document.querySelector(".form-group input");
-
-        input.style.width = "100%"
-        input.style.visibility = "visible";
-
-    }
-};
-const mmObj = window.matchMedia("(max-width: 770px)")
-myFunction(mmObj);
-mmObj.addListener(myFunction);
-
-let closeIcon = document.querySelector(".navbar-menu .fa-xmark");
-let openIcon = document.querySelector(".reso .fa-bars");
-let navMenu = document.querySelector(".navbar-menu-container");
-
-openIcon.addEventListener("click", () => {
-    navMenu.style.overflowX = "hidden";
-    navMenu.style.width = "250px"
-
-});
-
-closeIcon.addEventListener("click", () => {
-    navMenu.style.overflowX = "auto";
-    navMenu.style.width = "0"
-
-});
+cancelBtn.onclick = () => {
+    items.classList.remove("active");
+    menuBtn.classList.remove("hide");
+    searchBtn.classList.remove("hide");
+    cancelBtn.classList.remove("show");
+    cancelBtn.style.color = "#ff3d00"
+    form.classList.remove("active");
+}
+searchBtn.onclick = () => {
+    form.classList.add("active");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}

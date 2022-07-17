@@ -1,186 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-h1 {
-  margin-bottom: 0 !important;
-}
-
-p {
-  margin-bottom: 0 !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 ul {
   list-style: none;
-  margin-bottom: 0 !important;
+}
+
+li {
+  list-style: none;
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
-header {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  padding: 10px 0;
-  position: fixed;
-}
-
-.navbar-display {
-  width: 100% !important;
+nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
+  height: 70px;
+  padding: 0 100px;
+  background: #171c24;
 }
-.navbar-display h1 {
-  color: #fff;
-}
-.navbar-display .navbar-menu {
+nav .nav-items {
   display: flex;
-  padding-left: 3.7rem;
-  overflow-x: visible !important;
 }
-.navbar-display .navbar-menu li .fa-xmark {
-  font-size: 20px;
-  color: #fff !important;
+nav .nav-items li {
+  padding: 0 15px;
 }
-.navbar-display .navbar-menu .fa-xmark {
-  display: none !important;
-}
-.navbar-display .navbar-menu li {
-  margin-right: 25px;
-}
-.navbar-display .navbar-menu li:last-child {
-  margin-right: 0 !important;
-}
-.navbar-display .navbar-menu li a {
+nav .nav-items li a {
   font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+nav .nav-items li a:hover {
+  color: #ff3d00;
+}
+nav .logo {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
   color: #fff;
 }
-
-.form .form-group {
+nav form {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  height: 40px;
+  background: #1e232b;
+  min-width: 18% !important;
+  border: 1px solid rgba(155, 155, 155, 0.2);
+  border-radius: 2px;
+  padding: 2px;
 }
-.form .form-group input {
+nav form .search-data {
+  height: 100%;
   width: 100%;
-  margin-left: 10px;
-  position: relative;
-  background-color: transparent;
+  padding: 0 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  outline: 0;
+  font-size: 17px;
 }
-.form .form-group .fa-magnifying-glass,
-.form .form-group .fa-xmark {
-  padding: 5px;
-  position: absolute;
-  font-size: 20px;
+nav form button {
+  padding: 0 15px;
+  background: #ff3d00;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 2px;
 }
-.form .form-group .fa-magnifying-glass {
-  color: rgb(255, 255, 255);
+nav .menu-icon,
+nav .search-icon,
+nav .cancel-icon {
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
 }
-.form .form-group .fa-xmark {
-  color: rgb(255, 255, 255);
+nav .menu-icon span,
+nav .search-icon,
+nav .cancel-icon {
   display: none;
 }
 
-.reso {
-  width: 59.5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.fa-bars {
-  display: none !important;
-}
-
-#head {
-  width: 100%;
-  height: 100vh;
-  background-image: url(../img/head-bg.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-}
-
-@media (max-width: 770px) {
-  .navbar-display .navbar-menu-container {
+@media (max-width: 1180px) {
+  nav {
+    padding: 0px;
+  }
+  nav form {
+    position: absolute;
+    top: 80px;
+    right: 57px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.3s ease, opacity 0.1s ease;
+  }
+  nav form::before {
+    position: absolute;
+    content: "";
+    top: -13px;
+    right: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    margin: -19px 0 0;
+    border: 10px solid transparent;
+    border-bottom-color: #1e232b;
+  }
+  nav form::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    content: "";
+    height: 60px;
+    padding: 2px;
+    width: calc(100% + 20px);
+    background: #1e232b;
+    z-index: -2;
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+  }
+  nav form.active {
+    opacity: 1;
+    top: 95px;
+    pointer-events: auto;
+  }
+  nav .nav-items {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100vh;
-    /* From https://css.glass */
-    background: rgba(0, 0, 0, 0.59);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    overflow-x: hidden;
-    transition: all 0.3s ease-in-out;
-    z-index: 10;
+    z-index: 99;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #14181f;
+    display: inline-block;
+    padding: 10px 50px 0 50px;
+    text-align: center;
+    transition: left 0.3s ease;
   }
-  .navbar-display .navbar-menu {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10rem;
+  nav .nav-items.active {
+    left: 0%;
   }
-  .navbar-display .navbar-menu li {
-    margin-bottom: 20px;
+  nav .nav-items li {
+    line-height: 40px;
+    margin: 30px 0;
   }
-  .navbar-display .navbar-menu li a {
+  nav .nav-items li a {
     font-size: 20px;
   }
-  .navbar-display .navbar-menu .fa-xmark {
-    position: absolute;
-    top: 20px;
-    right: 15px;
-    color: #fff;
-    display: block !important;
-    font-size: 20px;
+  nav .logo {
+    flex: 2;
+    text-align: center;
   }
-
-  .form .form-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .form .form-group input {
-    position: relative;
-    width: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-  .form .form-group .fa-magnifying-glass,
-.form .form-group .fa-xmark {
-    padding: 5px;
-    position: absolute;
-    color: rgb(255, 255, 255);
-  }
-  .form .form-group .fa-magnifying-glass {
-    color: rgb(255, 255, 255);
-  }
-  .form .form-group .fa-xmark {
-    color: rgb(255, 255, 255);
+  nav .menu-icon {
     display: block;
   }
-
-  .reso {
-    flex-direction: row-reverse;
+  nav .search-icon,
+nav .menu-icon span {
+    display: block;
   }
-  .reso h1 {
-    margin-right: 10px;
+  nav .search-icon.hide,
+nav .menu-icon span.hide {
+    display: none;
   }
-
-  .fa-bars {
-    display: block !important;
+  nav .cancel-icon.show {
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  nav .menu-icon,
+nav .search-icon,
+nav .cancel-icon {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  nav .logo {
+    font-size: 20px;
+  }
+  nav form {
+    right: 20px;
   }
 }
